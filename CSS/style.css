@@ -1,0 +1,50 @@
+h2{
+    text-align: center;
+}
+.div_log_reg{
+    padding:15px;
+
+}
+
+.form_log_reg{
+    margin: auto;
+    border-radius: 3px 3px 3px 3px;
+    background-color: rgb(237, 237, 237);
+    padding: 15px;
+    width: 210px;
+}
+form > label{
+    font-weight: bold;
+}
+.button{
+    background-color:rgb(147, 215, 45);
+    color:white;
+    border-radius: 3px 3px 3px 3px;
+    padding: 3px;
+    width: 207px;
+}
+.forminput{
+    border-radius: 3px 3px 3px 3px;
+    padding: 3px;
+    width: 200px;
+}
+
+table,td,th{
+    margin:auto;
+    border: 1px;
+    border-style: solid;
+    border-collapse: collapse;
+    border-color: rgb(186, 186, 186);
+    padding-left:10px;
+    padding-right:10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color:white;
+}
+tr:nth-child(odd) {
+    background-color:rgb(228, 228, 228);
+}
