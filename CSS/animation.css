@@ -1,9 +1,9 @@
-.button:hover{
+.form_button:hover{
     background-color:rgb(111, 162, 34);
 }
 .reservation:hover{
     background-color:rgb(111, 162, 34);
 }
-.forminput:hover{
+.form_input:hover{
     background-color: rgb(214, 214, 214);
 }

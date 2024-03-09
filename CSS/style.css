@@ -1,9 +1,5 @@
-h2{
+.h_center{
     text-align: center;
-}
-.div_log_reg{
-    padding:15px;
-
 }
 
 .form_log_reg{
@@ -13,38 +9,40 @@ h2{
     padding: 15px;
     width: 210px;
 }
-form > label{
+.form_log_reg > label{
     font-weight: bold;
 }
-.button{
+.form_button{
     background-color:rgb(147, 215, 45);
     color:white;
     border-radius: 3px 3px 3px 3px;
     padding: 3px;
-    width: 207px;
+    width: 210px;
+    transition: 0.3s;
 }
-.forminput{
+.form_input{
     border-radius: 3px 3px 3px 3px;
     padding: 3px;
+    margin: 3px 0px;
     width: 200px;
+    transition: 0.3s;
 }
 
-table,td,th{
+#table_reservation,td,th{
     margin:auto;
     border: 1px;
     border-style: solid;
     border-collapse: collapse;
     border-color: rgb(186, 186, 186);
-    padding-left:10px;
-    padding-right:10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding:5px 10px;
     text-align: left;
 }
 
 tr:nth-child(even) {
     background-color:white;
+    transition: 0.2s;
 }
 tr:nth-child(odd) {
     background-color:rgb(228, 228, 228);
+    transition: 0.2s;
 }
