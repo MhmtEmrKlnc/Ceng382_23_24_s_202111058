@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ceLQ37z1/XpWcf62WRDtq0P9zFsI/UtIzGcsfxCe1gE=",
+  "Hash": "sAEQ+7OMPcB4iDHkjj2gKq7ZDw+o4bFPkXm6VAZeSqs=",
   "Source": "WebApplication1",
   "BasePath": "_content/WebApplication1",
   "Mode": "Default",
@@ -55,6 +55,25 @@
       "OriginalItemSpec": "c:\\Users\\mehme\\Desktop\\382\\Ceng382_23_24_s_202111058\\WebApplication1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\WebApplication1.bundle.scp.css"
     },
     {
+      "Identity": "c:\\Users\\mehme\\Desktop\\382\\Ceng382_23_24_s_202111058\\WebApplication1\\wwwroot\\css\\bootstrap.min.css",
+      "SourceId": "WebApplication1",
+      "SourceType": "Discovered",
+      "ContentRoot": "c:\\Users\\mehme\\Desktop\\382\\Ceng382_23_24_s_202111058\\WebApplication1\\wwwroot\\",
+      "BasePath": "_content/WebApplication1",
+      "RelativePath": "css/bootstrap.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\bootstrap.min.css"
+    },
+    {
       "Identity": "c:\\Users\\mehme\\Desktop\\382\\Ceng382_23_24_s_202111058\\WebApplication1\\wwwroot\\css\\site.css",
       "SourceId": "WebApplication1",
       "SourceType": "Discovered",
@@ -91,6 +110,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "c:\\Users\\mehme\\Desktop\\382\\Ceng382_23_24_s_202111058\\WebApplication1\\wwwroot\\js\\bootstrap.bundle.min.js",
+      "SourceId": "WebApplication1",
+      "SourceType": "Discovered",
+      "ContentRoot": "c:\\Users\\mehme\\Desktop\\382\\Ceng382_23_24_s_202111058\\WebApplication1\\wwwroot\\",
+      "BasePath": "_content/WebApplication1",
+      "RelativePath": "js/bootstrap.bundle.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\bootstrap.bundle.min.js"
     },
     {
       "Identity": "c:\\Users\\mehme\\Desktop\\382\\Ceng382_23_24_s_202111058\\WebApplication1\\wwwroot\\js\\site.js",
