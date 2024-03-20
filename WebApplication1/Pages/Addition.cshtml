@@ -3,6 +3,32 @@
 @{
     ViewData["Title"] = "Addition";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Addition.</p>
+
+<div style="text-align:center">
+    <h1>@ViewData["Title"]</h1>
+    <button type="button" class="btn btn-primary" onclick="hideshow()">Hide/Show</button>
+    <p id="addp" class="display-3">Addition Hide Show Deneme</p><br><br>
+
+    <button type="button" class="btn btn-primary" onclick="showform()">Show the Form</button><br><br>
+
+    <form id="form" style="display:none"  >
+        <h3>Addition Form</h3>
+        <div class="form-group">
+            <label for="firstnumber">Enter first number</label>
+            <input type="number" class="form-control" id="firstnumber" placeholder="First Number">
+        </div>
+        <div class="form-group">
+            <label for="secondnumber">Enter second number</label>
+            <input type="number" class="form-control" id="secondnumber" placeholder="Second Number">
+        </div>
+        <br>
+
+        <button type="button" class="btn btn-primary" onclick="add()">Calculate Sum</button>
+
+        <br><br>
+        <p style="background-color:rgb(99, 211, 99)"  id="resultp"> </p>
+    </form>
+</div>
+
+<script src="~/js/addition.js"></script>
