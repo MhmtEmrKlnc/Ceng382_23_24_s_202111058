@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = c:\Users\mehme\Desktop\382\Ceng382_23_24_s_202111058\WebApplication1
 build_property._RazorSourceGeneratorDebug = 
 
+[c:/Users/mehme/Desktop/382/Ceng382_23_24_s_202111058/WebApplication1/Pages/Addition.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkaXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [c:/Users/mehme/Desktop/382/Ceng382_23_24_s_202111058/WebApplication1/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
