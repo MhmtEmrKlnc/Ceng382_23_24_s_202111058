@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mehme\\Desktop\\382\\Ceng382_23_24_s_202111058\\WebApplication1\\WebApplication1.csproj": {}
+    "c:\\Users\\mehme\\Desktop\\382\\Ceng382_23_24_s_202111058\\WebApplication1\\WebApplication1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mehme\\Desktop\\382\\Ceng382_23_24_s_202111058\\WebApplication1\\WebApplication1.csproj": {
+    "c:\\Users\\mehme\\Desktop\\382\\Ceng382_23_24_s_202111058\\WebApplication1\\WebApplication1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mehme\\Desktop\\382\\Ceng382_23_24_s_202111058\\WebApplication1\\WebApplication1.csproj",
+        "projectUniqueName": "c:\\Users\\mehme\\Desktop\\382\\Ceng382_23_24_s_202111058\\WebApplication1\\WebApplication1.csproj",
         "projectName": "WebApplication1",
-        "projectPath": "C:\\Users\\mehme\\Desktop\\382\\Ceng382_23_24_s_202111058\\WebApplication1\\WebApplication1.csproj",
+        "projectPath": "c:\\Users\\mehme\\Desktop\\382\\Ceng382_23_24_s_202111058\\WebApplication1\\WebApplication1.csproj",
         "packagesPath": "C:\\Users\\mehme\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mehme\\Desktop\\382\\Ceng382_23_24_s_202111058\\WebApplication1\\obj\\",
+        "outputPath": "c:\\Users\\mehme\\Desktop\\382\\Ceng382_23_24_s_202111058\\WebApplication1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mehme\\AppData\\Roaming\\NuGet\\NuGet.Config",
