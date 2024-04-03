@@ -1,4 +1,4 @@
-public class Reservation
+public record class Reservation
 {
     public Room room{get;set;}
     public String reserverName{get;set;}

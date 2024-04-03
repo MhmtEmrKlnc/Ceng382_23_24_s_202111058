@@ -1,4 +1,4 @@
-public class ReservationHandler
+public record class ReservationHandler
 {
     private Reservation[][] reservations;
     private int gldays, glhours;
