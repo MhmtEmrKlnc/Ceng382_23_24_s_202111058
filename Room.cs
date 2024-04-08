@@ -9,7 +9,7 @@ public class Room
     public string? roomName { get; set; }
 
     [JsonPropertyName("capacity")]
-    public string? capacity { get; set; }
+    public int? capacity { get; set; }
 
 
 }
