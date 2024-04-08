@@ -5,27 +5,6 @@ using System.Text.Json.Serialization;
 using System.Threading.Channels;
 using Microsoft.VisualBasic;
 
-public class RoomData
-{
-
-    [JsonPropertyName("Room")]
-    public Room[]? Rooms { get; set; }
-}
-
-public class Room
-{
-    [JsonPropertyName("roomId")]
-    public string? roomId { get; set; }
-
-    [JsonPropertyName("roomName")]
-    public string? roomName { get; set; }
-
-    [JsonPropertyName("capacity")]
-    public string? capacity { get; set; }
-
-
-}
-
 class Program
 {
     static void addReservation(RoomData roomData, ReservationHandler handler, string id, string name, int day, int hour)
@@ -39,12 +18,13 @@ class Program
 
                 if (id == room.roomId)
                 {
-                    check=true;
+                    check = true;
                     if (name == "" || day < 1 || day > 7 || hour < 0 || hour > 24)
                     {
                         Console.WriteLine("Gerekli kısımlar(id, name, day, hour) boş bırakılamaz!\nDay 1-7 arası bir deger, hour 00-23 arası bir deger olmalı!\n");
                     }
-                    else if(room.roomId=="" || room.roomName=="" || room.capacity==""){
+                    else if (room.roomId == "" || room.roomName == "" || room.capacity == "")
+                    {
                         Console.WriteLine("Boyle bir oda bulunmamaktadır\n");
                     }
                     else
@@ -138,6 +118,17 @@ class Program
                 addReservation(roomData, reservationHandler, "003", "Mehmet", -1, 23); // yanlıs degerler deneme
                 addReservation(roomData, reservationHandler, "003", "", 5, 27); // yanlıs degerler deneme
             }
+
+            //json'a yazma denemesi
+            var logger = new FileLogger();
+            var logHandler = new LogHandler(logger);
+
+            var logRecord1 = new LogRecord("Mehmet Emre", "A-101", DateTime.Now);
+            logHandler.AddLog(logRecord1);
+
+            var logRecord2 = new LogRecord("Mehmet Emre Kılınç", "A-102", DateTime.Now);
+            logHandler.AddLog(logRecord2);
+            //------
 
             reservationHandler.displayWeeklySchedule();
         }

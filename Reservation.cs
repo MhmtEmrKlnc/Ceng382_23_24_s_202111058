@@ -1,9 +1,9 @@
 public record class Reservation
 {
-    public Room room{get;set;}
-    public String reserverName{get;set;}
-    public DateTime dateTime{get;set;}
-    public DateTime time{get;set;}
+    public Room room;
+    public string reserverName;
+    public DateTime dateTime;
+    public DateTime time;
 
     public Reservation(string roomid, string name, int day, int hour ){
         room=new Room();

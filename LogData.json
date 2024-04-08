@@ -1,0 +1,12 @@
+[
+  {
+    "ReserverName": "Mehmet Emre",
+    "RoomName": "A-101",
+    "Timestamp": "2024-04-08T13:10:10.4870082+03:00"
+  },
+  {
+    "ReserverName": "John Doe",
+    "RoomName": "A-102",
+    "Timestamp": "2024-04-08T13:10:10.5007187+03:00"
+  }
+]

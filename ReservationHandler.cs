@@ -1,5 +1,34 @@
 public record class ReservationHandler
 {
+    private readonly IReservationRepository _reservationRepository;
+    private readonly LogHandler _logHandler;
+    private readonly RoomHandler _roomHandler;
+    /*public ReservationHandler(LogHandler logHandler, RoomHandler roomHandler, IReservationRepository reservationRepository)
+    {
+        _reservationRepository = reservationRepository;
+        _logHandler = logHandler;
+        _roomHandler = roomHandler;
+        
+    }
+
+    public void AddReservation(Reservation reservation, string ReserverName){
+
+    }
+    public void DeleteReservation(Reservation reservation){
+        
+    }
+    public List<Reservation> GetAllReservations(){
+        throw new NotImplementedException();
+    }
+    public List<Room> GetRooms(){
+        throw new NotImplementedException();
+    }
+    public void SaveRooms(List<Room> rooms){
+
+    }
+*/
+
+
     private Reservation[][] reservations;
     private int gldays, glhours;
     public ReservationHandler(int days, int hours)
