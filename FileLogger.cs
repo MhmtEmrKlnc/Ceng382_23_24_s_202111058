@@ -54,7 +54,7 @@ public class FileLogger : ILogger
                     try
                     {
                         File.WriteAllText("LogData.json", json);
-                        Console.WriteLine("Log data LogData.json'a basarılı bir sekilde yazıldı");
+                        Console.WriteLine("Log data LogData.json'a basarılı bir sekilde yazıldı\n");
                     }
                     catch (IOException ex)
                     {

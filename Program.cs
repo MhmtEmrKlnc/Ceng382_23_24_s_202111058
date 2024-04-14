@@ -93,11 +93,15 @@ class Program
             var logHandler = new LogHandler(logger);
             ReservationHandler reservationHandler = new ReservationHandler(logHandler, roomHandler, repository);
 
+            Reservation reservation1 = new Reservation("001", "Deneme Deneme", 1, 1);
+            reservationHandler.AddReservation(reservation1, reservation1.reserverName);
+
             if (rooms != null)
             {
                 addReservation(rooms, reservationHandler, "001", "Mehmet", 5, 6);
+                addReservation(rooms, reservationHandler, "001", "Mehmet", 5, 6);//aynı gün-saat deneme (zaten bunu bir kere çalıştırdıktan sonra bir daha çalıştırınca ReservationData'da olan şu anda var olan rezervasyonları bir daha eklemeye çalıştığımız için de aynı uyarıyı (Bu saat ve günde başka bir rezervasyon var, lütfen başka saat-gün seçin) verecek)
                 addReservation(rooms, reservationHandler, "003", "Mehmet Emre", 6, 19);
-                addReservation(rooms, reservationHandler, "005", "Mehmet Emre", 1, 1);
+                addReservation(rooms, reservationHandler, "005", "Mehmet Emre", 1, 2);
                 addReservation(rooms, reservationHandler, "016", "Can Ates", 3, 1);
                 addReservation(rooms, reservationHandler, "016", "Can Ates", 3, 2);
                 addReservation(rooms, reservationHandler, "016", "Can Ates", 3, 3);
@@ -115,12 +119,14 @@ class Program
             }
 
             //silme denemesi
-            Reservation reservation1 = new Reservation("010", "Silme Denemesi", 7, 14);
-            reservationHandler.AddReservation(reservation1, reservation1.reserverName);
-            reservationHandler.DeleteReservation(reservation1);
+            Reservation reservation2 = new Reservation("010", "Silme Denemesi", 7, 14);
+            reservationHandler.AddReservation(reservation2, reservation2.reserverName);
+            reservationHandler.DeleteReservation(reservation2);
+            //ve tekrar ekleme denemesi(LogDataya iki kere yazmış olacak)
+            reservationHandler.AddReservation(reservation2,reservation2.reserverName);
+            
 
-
-
+            Console.WriteLine("Şu anda olan bütün Rezervasyonlar");
             var allReservations = repository.GetAllReservations();
             if (allReservations != null)
             {

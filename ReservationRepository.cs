@@ -2,12 +2,25 @@ using System.Net.Http.Json;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
+
 public class ReservationRepository : IReservationRepository
 {
     private List<Reservation> _reservations;
     public ReservationRepository()
     {
+    
+        string jsonFilePath = "ReservationData.json";
+        string jsonContent = File.ReadAllText(jsonFilePath);
+        var reservationList = JsonSerializer.Deserialize<List<Reservation>>(jsonContent);
         _reservations = new List<Reservation>();
+        if (reservationList != null)
+        {
+            foreach (var reservation in reservationList)
+            {
+                _reservations.Add(reservation);
+            }
+        }
+
     }
 
     public void AddReservation(Reservation reservation)
@@ -20,7 +33,8 @@ public class ReservationRepository : IReservationRepository
             }
             else
             {
-                _reservations = GetAllReservations();
+                
+
                 _reservations.Add(reservation);
 
                 string json = JsonSerializer.Serialize(_reservations, new JsonSerializerOptions

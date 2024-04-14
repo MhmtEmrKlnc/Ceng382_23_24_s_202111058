@@ -1,3 +1,5 @@
+using System.Runtime.InteropServices;
+
 public record class Reservation
 {
     public Room room{get;set;}
@@ -15,5 +17,6 @@ public record class Reservation
         //Console.WriteLine("\nRoom id: "+roomid+" Reserver Name: "+reserverName+" Day: "+ dateTime.Day+ " Hour: "+time.Hour);
 
     }
+    public Reservation(){}
 
 }
