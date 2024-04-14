@@ -1,4 +1,6 @@
+using System.Net.Http.Json;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 public class ReservationRepository : IReservationRepository
 {
@@ -33,9 +35,9 @@ public class ReservationRepository : IReservationRepository
                 else
                 {
                     File.WriteAllText("ReservationData.json", json);
-                    Console.WriteLine(reservation.reserverName+" adına "+reservation.room.roomName+" adlı oda icin Reservation basarılı bir sekilde ReservationData.json'a yazıldı");
+                    Console.WriteLine(reservation.reserverName + " adına " + reservation.room.roomName + " adlı oda icin Reservation basarılı bir sekilde ReservationData.json'a yazıldı");
                 }
-                
+
             }
 
         }
@@ -46,6 +48,7 @@ public class ReservationRepository : IReservationRepository
 
     }
 
+
     public void DeleteReservation(Reservation reservation)
     {
         _reservations.Remove(reservation);
@@ -53,7 +56,7 @@ public class ReservationRepository : IReservationRepository
         try
         {
             _reservations = GetAllReservations();
-            _reservations.RemoveAll(r => r.room.roomId == reservation.room.roomId && r.reserverName==reservation.reserverName && r.dateTime == reservation.dateTime && r.time == reservation.time);
+            _reservations.RemoveAll(r => r.room.roomId == reservation.room.roomId && r.reserverName == reservation.reserverName && r.dateTime == reservation.dateTime && r.time == reservation.time);
 
             string json = JsonSerializer.Serialize(_reservations, new JsonSerializerOptions
             {

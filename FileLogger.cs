@@ -4,7 +4,26 @@ using System.Text.Json.Serialization;
 public class FileLogger : ILogger
 {
     List<LogRecord> _data = new List<LogRecord>();
+    public FileLogger(){
+        string jsonFilePath = "LogData.json";
+        string jsonContent = File.ReadAllText(jsonFilePath);
 
+        var options = new JsonSerializerOptions
+        {
+            NumberHandling = JsonNumberHandling.AllowReadingFromString |
+            JsonNumberHandling.WriteAsString,
+            IncludeFields = true
+        };
+
+        var logs = JsonSerializer.Deserialize<List<LogRecord>>(jsonContent, options);
+        if (logs != null)
+        {
+            foreach (var log in logs)
+            {
+                _data.Add(log);
+            }
+        }
+    }
     public void Log(LogRecord log)
     {
         try
