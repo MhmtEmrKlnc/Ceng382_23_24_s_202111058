@@ -5,21 +5,37 @@ using System.Text.Json.Serialization;
 
 public class ReservationRepository : IReservationRepository
 {
-    private List<Reservation> _reservations;
+    private List<Reservation> _reservations = new List<Reservation>();
     public ReservationRepository()
     {
-    
-        string jsonFilePath = "ReservationData.json";
-        string jsonContent = File.ReadAllText(jsonFilePath);
-        var reservationList = JsonSerializer.Deserialize<List<Reservation>>(jsonContent);
-        _reservations = new List<Reservation>();
-        if (reservationList != null)
+        try
         {
-            foreach (var reservation in reservationList)
+            string jsonFilePath = "ReservationData.json";
+            string jsonContent = File.ReadAllText(jsonFilePath);
+            var reservationList = JsonSerializer.Deserialize<List<Reservation>>(jsonContent);
+            _reservations = new List<Reservation>();
+            if (reservationList != null)
             {
-                _reservations.Add(reservation);
+                foreach (var reservation in reservationList)
+                {
+                    _reservations.Add(reservation);
+                }
             }
         }
+        catch (FileNotFoundException e)
+        {
+            Console.WriteLine($"File not found! - {e.Message}");
+        }
+        catch (NullReferenceException e)
+        {
+            Console.WriteLine($"Null exception! - {e.Message}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+
+
 
     }
 
@@ -33,7 +49,7 @@ public class ReservationRepository : IReservationRepository
             }
             else
             {
-                
+
 
                 _reservations.Add(reservation);
 

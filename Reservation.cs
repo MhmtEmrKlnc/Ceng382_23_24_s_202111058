@@ -7,9 +7,8 @@ public record class Reservation
     public DateTime dateTime{get;set;}
     public DateTime time{get;set;}
 
-    public Reservation(string roomid, string name, int day, int hour ){
-        room=new Room();
-        room.roomId=roomid;
+    public Reservation(Room _room, string name, int day, int hour ){
+        room=_room;
         reserverName=name;
         dateTime = new DateTime(1, 1, day, 0, 00, 0);
         time = new DateTime(1, 1, 1, hour, 00, 0);

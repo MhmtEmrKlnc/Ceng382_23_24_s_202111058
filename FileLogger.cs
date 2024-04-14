@@ -4,25 +4,43 @@ using System.Text.Json.Serialization;
 public class FileLogger : ILogger
 {
     List<LogRecord> _data = new List<LogRecord>();
-    public FileLogger(){
-        string jsonFilePath = "LogData.json";
-        string jsonContent = File.ReadAllText(jsonFilePath);
-
-        var options = new JsonSerializerOptions
+    public FileLogger()
+    {
+        try
         {
-            NumberHandling = JsonNumberHandling.AllowReadingFromString |
-            JsonNumberHandling.WriteAsString,
-            IncludeFields = true
-        };
+            string jsonFilePath = "LogData.json";
+            string jsonContent = File.ReadAllText(jsonFilePath);
 
-        var logs = JsonSerializer.Deserialize<List<LogRecord>>(jsonContent, options);
-        if (logs != null)
-        {
-            foreach (var log in logs)
+            var options = new JsonSerializerOptions
             {
-                _data.Add(log);
+                NumberHandling = JsonNumberHandling.AllowReadingFromString |
+                JsonNumberHandling.WriteAsString,
+                IncludeFields = true
+            };
+
+            var logs = JsonSerializer.Deserialize<List<LogRecord>>(jsonContent, options);
+            if (logs != null)
+            {
+                foreach (var log in logs)
+                {
+                    _data.Add(log);
+                }
             }
         }
+        catch (FileNotFoundException e)
+        {
+            Console.WriteLine($"File not found! - {e.Message}");
+        }
+        catch (NullReferenceException e)
+        {
+            Console.WriteLine($"Null exception! - {e.Message}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+
+
     }
     public void Log(LogRecord log)
     {

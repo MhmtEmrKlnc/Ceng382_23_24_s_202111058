@@ -5,16 +5,6 @@
       "roomName": "A-101",
       "capacity": 30
     },
-    "reserverName": "Deneme Deneme",
-    "dateTime": "0001-01-01T00:00:00",
-    "time": "0001-01-01T01:00:00"
-  },
-  {
-    "room": {
-      "roomId": "001",
-      "roomName": "A-101",
-      "capacity": 30
-    },
     "reserverName": "Mehmet",
     "dateTime": "0001-01-05T00:00:00",
     "time": "0001-01-01T06:00:00"
@@ -121,9 +111,9 @@
   },
   {
     "room": {
-      "roomId": "010",
-      "roomName": "A-110",
-      "capacity": 40
+      "roomId": "011",
+      "roomName": "A-111",
+      "capacity": 42
     },
     "reserverName": "Silme Denemesi",
     "dateTime": "0001-01-07T00:00:00",

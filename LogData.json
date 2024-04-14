@@ -1,11 +1,5 @@
 [
   {
-    "ReserverName": "Deneme Deneme",
-    "RoomName": "A-101",
-    "Timestamp": "0001-01-01T01:00:00",
-    "Status": "Rezervasyon Eklendi"
-  },
-  {
     "ReserverName": "Mehmet",
     "RoomName": "A-101",
     "Timestamp": "0001-01-05T06:00:00",
@@ -73,19 +67,19 @@
   },
   {
     "ReserverName": "Silme Denemesi",
-    "RoomName": "A-110",
+    "RoomName": "A-111",
     "Timestamp": "0001-01-07T14:00:00",
     "Status": "Rezervasyon Eklendi"
   },
   {
     "ReserverName": "Silme Denemesi",
-    "RoomName": "A-110",
+    "RoomName": "A-111",
     "Timestamp": "0001-01-07T14:00:00",
     "Status": "Rezervasyon Silindi"
   },
   {
     "ReserverName": "Silme Denemesi",
-    "RoomName": "A-110",
+    "RoomName": "A-111",
     "Timestamp": "0001-01-07T14:00:00",
     "Status": "Rezervasyon Eklendi"
   }
