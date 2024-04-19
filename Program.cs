@@ -146,7 +146,14 @@ class Program
             }
 
 
-            reservationHandler.DisplayWeeklySchedule();
+            ReservationService reservationService = new ReservationService(repository);
+            reservationService.DisplayWeeklySchedule();
+
+
+            reservationService.InitializeReservations();
+
+            reservationService.DisplayReservationByReserver("Can Ates");
+            reservationService.DisplayReservationByRoomId("005");
 
         }
 
