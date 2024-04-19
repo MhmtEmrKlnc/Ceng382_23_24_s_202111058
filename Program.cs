@@ -128,7 +128,7 @@ class Program
             }
 
 
-            Reservation reservation2 = new Reservation(room1, "Silme Denemesi", 7, 14);
+            Reservation reservation2 = new Reservation(room1, "SilmeVeTekrarEkleme Denemesi", 7, 14);
             reservationHandler.AddReservation(reservation2, reservation2.reserverName);
             reservationHandler.DeleteReservation(reservation2);
             //ve tekrar ekleme denemesi(LogDataya iki kere yazmış olacak)
@@ -149,11 +149,36 @@ class Program
             ReservationService reservationService = new ReservationService(repository);
             reservationService.DisplayWeeklySchedule();
 
-
+            //-------------------------------------------------------------
+            //LINQ(Lab8)
             reservationService.InitializeReservations();
-
+            //isme gore reservationları getir
             reservationService.DisplayReservationByReserver("Can Ates");
+            //oda id'sine gore reservasyonları getir
             reservationService.DisplayReservationByRoomId("005");
+
+            LogService logService = new LogService();
+            logService.InitializeReservations("LogData.json");
+            //isme gore logları getir
+            logService.DisplayLogByName("Mehmet");
+            //günler arası logları getir
+            //bakmak istediğiniz günler icin dayStart ve dayEnd'i degistirebilirsiniz
+            int dayStart = 4, dayEnd = 7;
+            if (dayStart < 1 || dayStart > 7 || dayEnd < 0 || dayStart > 7)
+            {
+                Console.WriteLine("\nAralıktaki Loglara bakmak istediğiniz günler haftanın günleri yani 1-7 arası olmalıdır");
+            }
+            else if(dayEnd<dayStart){
+                Console.WriteLine("\nLütfen aralığı dogru giriniz(dayStart degeri dayEnd'den kucuk olmalı ve bu degerler 1-7 arası olmalı)");
+            }
+            else
+            {
+                DateTime start = new DateTime(1, 1, dayStart, 00, 00, 0);
+                DateTime end = new DateTime(1, 1, dayEnd, 23, 00, 0);
+                logService.DisplayLogs(start, end);
+            }
+
+
 
         }
 
