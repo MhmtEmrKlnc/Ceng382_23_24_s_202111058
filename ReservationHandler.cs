@@ -1,11 +1,11 @@
 public record class ReservationHandler
 {
-    private readonly IReservationRepository _reservationRepository;
+    private readonly ReservationService _reservationService;
     private readonly LogHandler _logHandler;
     private readonly RoomHandler _roomHandler;
-    public ReservationHandler(LogHandler logHandler, RoomHandler roomHandler, IReservationRepository reservationRepository)
+    public ReservationHandler(LogHandler logHandler, RoomHandler roomHandler, ReservationService reservationService)
     {
-        _reservationRepository = reservationRepository;
+        _reservationService = reservationService;
         _logHandler = logHandler;
         _roomHandler = roomHandler;
 
@@ -35,7 +35,7 @@ public record class ReservationHandler
         }
         else
         {
-            var _reservations = _reservationRepository.GetAllReservations();
+            var _reservations = _reservationService.GetAllReservations();
             bool check = false;
             foreach (var _reservation in _reservations)
             {
@@ -53,7 +53,7 @@ public record class ReservationHandler
             else
             {
                 //ReservationData.jsonda şu anda var olan rezervasyonlar var. Bu yüzden bir rezervasyon silinirse buradan da silinir.
-                _reservationRepository.AddReservation(reservation);
+                _reservationService.AddReservation(reservation);
                 DateTime logDateTime = new DateTime(1, 1, reservation.dateTime.Day, reservation.time.Hour, 00, 0);
                 //LogData.jsonda geçmişe yönelik bütün rezervasyon kayıtları var. Bir rezervasyon silinirse buradan silinmez çünkü öyle bir rezervasyon yapıldı önceden.
                 var logRecord = new LogRecord(ReserverName, reservation.room.roomName, logDateTime, "Rezervasyon Eklendi");
@@ -68,7 +68,7 @@ public record class ReservationHandler
     {
         if (reservation.reserverName!=null && reservation.room.roomName!=null)
         {
-            _reservationRepository.DeleteReservation(reservation);
+            _reservationService.DeleteReservation(reservation);
             DateTime logDateTime = new DateTime(1, 1, reservation.dateTime.Day, reservation.time.Hour, 00, 0);
             var logRecord = new LogRecord(reservation.reserverName, reservation.room.roomName, logDateTime, "Rezervasyon Silindi");
             _logHandler.AddLog(logRecord);
@@ -76,7 +76,7 @@ public record class ReservationHandler
     }
     public List<Reservation> GetAllReservations()
     {
-        return _reservationRepository.GetAllReservations();
+        return _reservationService.GetAllReservations();
     }
     public List<Room> GetRooms()
     {
@@ -86,6 +86,46 @@ public record class ReservationHandler
     {
         _roomHandler.SaveRooms(rooms);
     }
+    public void DisplayWeeklySchedule()
+    {
+        var reservations = _reservationService.GetAllReservations();
+        Console.WriteLine("\nTablodaki satırlar günleri, sütunlar saatleri göstermektedir. Tablo o gün ve saate denk gelen, rezervasyonu olan odanın id'sini göstermektedir.");
+        Console.Write("   |");
+        for (int j = 0; j < 24; j++)
+        {
+            Console.Write(j.ToString("D2") + ":00|");
+        }
+        Console.Write("\n");
+        for (int i = 1; i < 8; i++)
+        {
+            Console.Write(i + " | ");
+            for (int j = 0; j < 24; j++)
+            {
+                bool check = false;
+                foreach (var reservation in reservations)
+                {
 
+                
+                    if (reservation.dateTime.Day == i && reservation.time.Hour == j)
+                    {
+
+                        Console.Write(reservation.room.roomName + "|");
+                        check = true;
+                    }
+
+                }
+                if (check == false)
+                {
+                    Console.Write(" --- |");
+                }
+
+
+            }
+            Console.Write("\n");
+        }
+
+
+
+    }
 
 }

@@ -82,7 +82,6 @@ class Program
             {
             new Room { roomId = "017", roomName = "A-117", capacity = 10 },
             new Room { roomId = "018", roomName = "Deneme", capacity = 25 }
-            // Diğer odaları burada ekleyin
             };
 
             roomHandler.SaveRooms(roomsList);*/
@@ -93,9 +92,10 @@ class Program
 
             //reservation repository denemesi
             var repository = new ReservationRepository();
+            var service = new ReservationService(repository);
             var logger = new FileLogger();
             var logHandler = new LogHandler(logger);
-            ReservationHandler reservationHandler = new ReservationHandler(logHandler, roomHandler, repository);
+            ReservationHandler reservationHandler = new ReservationHandler(logHandler, roomHandler, service);
 
 
             if (rooms != null)
@@ -146,8 +146,7 @@ class Program
             }
 
 
-            ReservationService reservationService = new ReservationService(reservationHandler);
-            reservationService.DisplayWeeklySchedule();
+            reservationHandler.DisplayWeeklySchedule();
 
         }
 

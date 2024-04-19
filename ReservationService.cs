@@ -1,25 +1,29 @@
 public class ReservationService : IReservationService
 {
-    private ReservationHandler _reservationHandler;
+    private ReservationRepository _reservationRepository;
 
-    public ReservationService(ReservationHandler reservationHandler)
+    public ReservationService(ReservationRepository reservationRepository)
     {
-        _reservationHandler = reservationHandler;
+        _reservationRepository = reservationRepository;
     }
 
-    public void AddReservation(Reservation reservation, string ReserverName)
+    public void AddReservation(Reservation reservation)
     {
-        _reservationHandler.AddReservation(reservation,ReserverName);
+        _reservationRepository.AddReservation(reservation);
     }
 
     public void DeleteReservation(Reservation reservation)
     {
-        _reservationHandler.DeleteReservation(reservation);
+        _reservationRepository.DeleteReservation(reservation);
+    }
+    public List<Reservation> GetAllReservations()
+    {
+        return _reservationRepository.GetAllReservations();
     }
 
     public void DisplayWeeklySchedule()
     {
-        var reservations = _reservationHandler.GetAllReservations();
+        var reservations = _reservationRepository.GetAllReservations();
         Console.WriteLine("\nTablodaki satırlar günleri, sütunlar saatleri göstermektedir. Tablo o gün ve saate denk gelen, rezervasyonu olan odanın id'sini göstermektedir.");
         Console.Write("   |");
         for (int j = 0; j < 24; j++)

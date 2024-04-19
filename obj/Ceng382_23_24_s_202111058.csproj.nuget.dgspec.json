@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mehme\\Desktop\\382\\Ceng382_23_24_s_202111058\\Ceng382_23_24_s_202111058.csproj": {}
+    "C:\\Users\\mehme\\Desktop\\Yeni klasör\\Ceng382_23_24_s_202111058\\Ceng382_23_24_s_202111058.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mehme\\Desktop\\382\\Ceng382_23_24_s_202111058\\Ceng382_23_24_s_202111058.csproj": {
+    "C:\\Users\\mehme\\Desktop\\Yeni klasör\\Ceng382_23_24_s_202111058\\Ceng382_23_24_s_202111058.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mehme\\Desktop\\382\\Ceng382_23_24_s_202111058\\Ceng382_23_24_s_202111058.csproj",
+        "projectUniqueName": "C:\\Users\\mehme\\Desktop\\Yeni klasör\\Ceng382_23_24_s_202111058\\Ceng382_23_24_s_202111058.csproj",
         "projectName": "Ceng382_23_24_s_202111058",
-        "projectPath": "C:\\Users\\mehme\\Desktop\\382\\Ceng382_23_24_s_202111058\\Ceng382_23_24_s_202111058.csproj",
+        "projectPath": "C:\\Users\\mehme\\Desktop\\Yeni klasör\\Ceng382_23_24_s_202111058\\Ceng382_23_24_s_202111058.csproj",
         "packagesPath": "C:\\Users\\mehme\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mehme\\Desktop\\382\\Ceng382_23_24_s_202111058\\obj\\",
+        "outputPath": "C:\\Users\\mehme\\Desktop\\Yeni klasör\\Ceng382_23_24_s_202111058\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mehme\\AppData\\Roaming\\NuGet\\NuGet.Config",
