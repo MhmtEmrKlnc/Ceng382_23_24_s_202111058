@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\mehme\\Desktop\\Yeni klasör\\Ceng382_23_24_s_202111058\\ProjeTest\\ProjeTest.csproj": {}
+    "C:\\Users\\mehme\\Desktop\\Yeni klasör\\Ceng382_23_24_s_202111058\\ProjeTest\\ProjeTest.csproj": {}
   },
   "projects": {
-    "c:\\Users\\mehme\\Desktop\\Yeni klasör\\Ceng382_23_24_s_202111058\\ProjeTest\\ProjeTest.csproj": {
+    "C:\\Users\\mehme\\Desktop\\Yeni klasör\\Ceng382_23_24_s_202111058\\ProjeTest\\ProjeTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\mehme\\Desktop\\Yeni klasör\\Ceng382_23_24_s_202111058\\ProjeTest\\ProjeTest.csproj",
+        "projectUniqueName": "C:\\Users\\mehme\\Desktop\\Yeni klasör\\Ceng382_23_24_s_202111058\\ProjeTest\\ProjeTest.csproj",
         "projectName": "ProjeTest",
-        "projectPath": "c:\\Users\\mehme\\Desktop\\Yeni klasör\\Ceng382_23_24_s_202111058\\ProjeTest\\ProjeTest.csproj",
+        "projectPath": "C:\\Users\\mehme\\Desktop\\Yeni klasör\\Ceng382_23_24_s_202111058\\ProjeTest\\ProjeTest.csproj",
         "packagesPath": "C:\\Users\\mehme\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\mehme\\Desktop\\Yeni klasör\\Ceng382_23_24_s_202111058\\ProjeTest\\obj\\",
+        "outputPath": "C:\\Users\\mehme\\Desktop\\Yeni klasör\\Ceng382_23_24_s_202111058\\ProjeTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mehme\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -44,6 +44,28 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
