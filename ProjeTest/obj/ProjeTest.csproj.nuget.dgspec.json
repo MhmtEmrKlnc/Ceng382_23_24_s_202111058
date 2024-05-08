@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mehme\\Desktop\\Yeni klasör\\Ceng382_23_24_s_202111058\\ProjeTest\\ProjeTest.csproj": {}
+    "c:\\Users\\mehme\\Desktop\\Yeni klasör\\Ceng382_23_24_s_202111058\\ProjeTest\\ProjeTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mehme\\Desktop\\Yeni klasör\\Ceng382_23_24_s_202111058\\ProjeTest\\ProjeTest.csproj": {
+    "c:\\Users\\mehme\\Desktop\\Yeni klasör\\Ceng382_23_24_s_202111058\\ProjeTest\\ProjeTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mehme\\Desktop\\Yeni klasör\\Ceng382_23_24_s_202111058\\ProjeTest\\ProjeTest.csproj",
+        "projectUniqueName": "c:\\Users\\mehme\\Desktop\\Yeni klasör\\Ceng382_23_24_s_202111058\\ProjeTest\\ProjeTest.csproj",
         "projectName": "ProjeTest",
-        "projectPath": "C:\\Users\\mehme\\Desktop\\Yeni klasör\\Ceng382_23_24_s_202111058\\ProjeTest\\ProjeTest.csproj",
+        "projectPath": "c:\\Users\\mehme\\Desktop\\Yeni klasör\\Ceng382_23_24_s_202111058\\ProjeTest\\ProjeTest.csproj",
         "packagesPath": "C:\\Users\\mehme\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mehme\\Desktop\\Yeni klasör\\Ceng382_23_24_s_202111058\\ProjeTest\\obj\\",
+        "outputPath": "c:\\Users\\mehme\\Desktop\\Yeni klasör\\Ceng382_23_24_s_202111058\\ProjeTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mehme\\AppData\\Roaming\\NuGet\\NuGet.Config",
