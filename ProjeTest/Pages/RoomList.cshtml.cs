@@ -16,10 +16,8 @@ public class RoomListModel : PageModel
     }
 
     public void OnGet()
-{
+    {
           RoomList = RoomListContext.Rooms.ToList<Room>();
-}
-    
-
+    }
 }
 

@@ -3,11 +3,11 @@
 @{
     ViewData["Title"] = "Rooms";
 }
-<h1>@ViewData["Title"]</h1>
+<h1 style="text-align: center">@ViewData["Title"]</h1>
 
-<table class="table mt-5">
+<table class="table-border table table-striped table-bordered mt-5">
     <thead>
-        <tr>
+        <tr class="table-effect">
             <th scope="col">Room Id</th>
             <th scope="col">Room Name</th>
             <th scope="col">Capacity</th>
@@ -17,11 +17,10 @@
     <tbody>
     @foreach (var room in RoomListModel.RoomList)
     {
-        <tr>
+        <tr class="table-effect">
             <td>@room.Id</td>
             <td>@room.RoomName</td>
             <td>@room.Capacity</td>
-
             
         </tr>
     }

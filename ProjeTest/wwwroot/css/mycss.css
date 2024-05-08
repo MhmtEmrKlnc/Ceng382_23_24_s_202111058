@@ -1,0 +1,29 @@
+.center-screen {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.form-border {
+
+    border-radius: 10px;
+    border: 2px solid #8ab3fa;
+    padding: 20px;
+    width: 300px;
+    height: 300px;
+
+}
+.form-input:hover{
+    background-color:#8ab3fa; 
+    transition: 0.5s;   
+}
+
+.table-border{
+    border: 2px solid #8ab3fa;
+}
+
+.table-effect:hover{
+    background-color:#8ab3fa;  
+    transition: 0.5s; 
+}
