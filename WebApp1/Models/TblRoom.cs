@@ -7,9 +7,9 @@ public partial class TblRoom
 {
     public int Id { get; set; }
 
-    public string? RoomName { get; set; }
+    public string RoomName { get; set; } = null!;
 
-    public int? PricePerNight { get; set; }
+    public int PricePerNight { get; set; }
 
     public bool? IsDeleted { get; set; }
 

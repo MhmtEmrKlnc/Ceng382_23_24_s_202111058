@@ -21,7 +21,7 @@ public partial class LabWebAppDbContext : DbContext
 
     public virtual DbSet<TblRoom> TblRooms { get; set; }
 
-   protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         var builder = WebApplication.CreateBuilder();
         var connectionString = builder.Configuration.GetConnectionString ("MyConnection");
@@ -52,6 +52,7 @@ public partial class LabWebAppDbContext : DbContext
 
             entity.HasOne(d => d.Room).WithMany(p => p.TblLogs)
                 .HasForeignKey(d => d.RoomId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__tbl_log__roomId__5EBF139D");
         });
 
@@ -76,6 +77,7 @@ public partial class LabWebAppDbContext : DbContext
 
             entity.HasOne(d => d.Room).WithMany(p => p.TblReservations)
                 .HasForeignKey(d => d.RoomId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__tbl_reser__roomI__619B8048");
         });
 
