@@ -21,7 +21,7 @@ public partial class LabWebAppDbContext : DbContext
 
     public virtual DbSet<TblRoom> TblRooms { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+   protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         var builder = WebApplication.CreateBuilder();
         var connectionString = builder.Configuration.GetConnectionString ("MyConnection");
@@ -86,6 +86,7 @@ public partial class LabWebAppDbContext : DbContext
             entity.ToTable("tbl_room");
 
             entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Capacity).HasColumnName("capacity");
             entity.Property(e => e.IsDeleted).HasColumnName("isDeleted");
             entity.Property(e => e.PricePerNight).HasColumnName("pricePerNight");
             entity.Property(e => e.RoomName)

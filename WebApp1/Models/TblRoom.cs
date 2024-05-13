@@ -13,6 +13,8 @@ public partial class TblRoom
 
     public bool? IsDeleted { get; set; }
 
+    public int? Capacity { get; set; }
+
     public virtual ICollection<TblLog> TblLogs { get; set; } = new List<TblLog>();
 
     public virtual ICollection<TblReservation> TblReservations { get; set; } = new List<TblReservation>();

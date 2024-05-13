@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\WebApp1.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\mehme\\Desktop\\Yeni klasör\\Ceng382_23_24_s_202111058\\WebApp1\\wwwroot\\css\\mycss.css",
+      "PackagePath": "staticwebassets\\css\\mycss.css"
+    },
+    {
       "Id": "C:\\Users\\mehme\\Desktop\\Yeni klasör\\Ceng382_23_24_s_202111058\\WebApp1\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

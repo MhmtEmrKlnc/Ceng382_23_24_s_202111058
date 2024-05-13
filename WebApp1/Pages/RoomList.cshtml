@@ -1,0 +1,30 @@
+﻿@page
+@model RoomListModel
+@{
+    ViewData["Title"] = "Rooms";
+}
+<h1 style="text-align: center">@ViewData["Title"]</h1>
+
+<table class="table-border table table-striped table-bordered mt-5">
+    <thead>
+        <tr class="table-effect">
+            <th scope="col">Room Id</th>
+            <th scope="col">Room Name</th>
+            <th scope="col">Capacity</th>
+            <th scope="col">Price Per Night</th>
+
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var room in RoomListModel.RoomList)
+    {
+        <tr class="table-effect">
+            <td>@room.Id</td>
+            <td>@room.RoomName</td>
+            <td>@room.Capacity</td>
+            <td>@room.PricePerNight</td>
+            
+        </tr>
+    }
+    </tbody>
+</table>
