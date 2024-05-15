@@ -1,0 +1,32 @@
+﻿@page
+@model ReservationListModel
+@{
+    ViewData["Title"] = "Reservations";
+}
+
+<h1 style="text-align: center">@ViewData["Title"]</h1>
+
+<table class="table-border table table-striped table-bordered mt-5">
+    <thead>
+        <tr class="table-effect">
+            <th scope="col">Reservation Id</th>
+            <th scope="col">User Id</th>
+            <th scope="col">Room Id</th>
+            <th scope="col">Start Date</th>
+            <th scope="col">End Date</th>
+
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var reservation in ReservationListModel.ReservationList)
+    {
+        <tr class="table-effect">
+            <td>@reservation.Id</td>
+            <td>@reservation.UserId</td>
+            <td>@reservation.RoomId</td>
+            <td>@reservation.ReservationStartDate</td>
+            <td>@reservation.ReservationEndDate</td>
+        </tr>
+    }
+    </tbody>
+</table>

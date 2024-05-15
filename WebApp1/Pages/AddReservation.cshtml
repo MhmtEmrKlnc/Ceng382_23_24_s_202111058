@@ -1,0 +1,44 @@
+﻿@page
+@model AddReservationModel
+@{
+    ViewData["Title"] = "Add Reservation";
+}
+<h1 style="text-align: center">@ViewData["Title"]</h1>
+<br>
+
+<div class="center-screen">
+
+    <form method="post" class="form-border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="NewReservation.RoomId" class="control-label">Room</label>
+            <select asp-for="NewReservation.RoomId" class="form-control">
+                @foreach (var room in AddReservationModel.RoomList)
+                {
+                    <option value="@room.Id">@room.RoomName</option>
+                }
+            </select>
+            <span asp-validation-for="NewReservation.RoomId" class="text-danger"></span>
+        </div>
+        <br>
+        <div class="form-group">
+            <label asp-for="NewReservation.ReservationStartDate" class="control-label">Reservation Start Date</label>
+            <input class="form-control" asp-for="NewReservation.ReservationStartDate" />
+        </div>
+        <br>
+        <div class="form-group">
+            <label asp-for="NewReservation.ReservationEndDate" class="control-label">Reservation End Date</label>
+            <input class="form-control" asp-for="NewReservation.ReservationEndDate" />
+        </div>
+        <br>
+
+        <div class="form-group">
+            <br>
+            <input type="submit" value="Add" class="btn btn-primary" />
+        </div>
+
+    </form>
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
+</div>
