@@ -1,6 +1,7 @@
 ﻿﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using WebApp1.Models;
 
 namespace WebApp1.Pages;
@@ -9,17 +10,15 @@ public class ReservationListModel : PageModel
 {
 
     public LabWebAppDbContext context= new();
-    public static List<TblReservation> ReservationList { get;set; } = default!;
+    public static List<TblReservation> ReservationList { get;set; } = new List<TblReservation>();
     public static List<TblRoom> RoomList { get;set; } = default!;
     public static List<IdentityUser> UserList { get;set; } = default!;
     private readonly ILogger<ReservationListModel> _logger;
     private readonly UserManager<IdentityUser> _userManager;
 
 
-    
-    public static DateOnly startDate;
+    public static DateTime startDate;
 
-    public int temp=0;
 
     public ReservationListModel(ILogger<ReservationListModel> logger, UserManager<IdentityUser> userManager)
     {
@@ -29,22 +28,30 @@ public class ReservationListModel : PageModel
 
     public void OnGet()
     {
-        ReservationList = context.TblReservations.ToList<TblReservation>();
+        
+        var reservations = context.TblReservations.ToList<TblReservation>();
         RoomList=context.TblRooms.ToList<TblRoom>();
         UserList=_userManager.Users.ToList();
-        if(temp==0){
-            startDate=DateOnly.FromDateTime(DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek));
+        startDate=DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek).AddDays(1);
+
+        int temp=0;
+        foreach (var reservation in reservations){
+            if(DateTime.Compare(reservation.ReservationStartDate, startDate) >= 0 && DateTime.Compare(reservation.ReservationEndDate, startDate.AddDays(7)) <= 0){
+                foreach(var reser in ReservationList){
+                    temp=0;
+                    if(reservation.Id==reser.Id){
+                        temp=1;
+                        break;
+                    }
+                }
+                if(temp==0){
+                    ReservationList.Add(reservation);
+                }
+                
+            }
         }
-        else{
-            startDate=DateOnly.FromDateTime(DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek)).AddDays(temp);
-        }
-        
+    
     }
 
-    public IActionResult OnPostNextWeek()
-        {
-            temp=7;
-            return RedirectToAction("Get");
-        }
 }
 
