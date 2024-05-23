@@ -6,11 +6,14 @@
 
 <h1 style="text-align: center">@ViewData["Title"]</h1>
 
+
 <table class="table-border table table-striped table-bordered mt-5">
     <thead>
         <tr class="table-effect">
             <th></th>
-            @{var i=ReservationListModel.startDate;}
+            @{
+                var i = ReservationListModel.startDate;
+            }
             <th>@i</th>
             <th>@i.AddDays(1)</th>
             <th>@i.AddDays(2)</th>
@@ -22,38 +25,52 @@
         </tr>
     </thead>
     <tbody>
-        @for(int j=0;j<24;j++){
+        @for (int j = 0; j < 24; j++)
+        {
             <tr>
                 <th>@j:00</th>
-                @for(int z=0;z<7;z++){
-                    var temp=0;
+                @for (int z = 0; z < 7; z++)
+                {
+                    var temp = 0;
                     <th>
-                        @foreach(var reservation in ReservationListModel.ReservationList){
-                        if(z>=((int)reservation.ReservationStartDate.DayOfWeek)%7 && z<=((int)reservation.ReservationEndDate.DayOfWeek)%7 && j>=(int)reservation.ReservationStartDate.Hour && j<=(int)reservation.ReservationEndDate.Hour){
-                            temp=1;
-                            @foreach(var user in ReservationListModel.UserList){
-                                if(user.Id == reservation.UserId){
-                                    temp=1;
-                                    <p>@reservation.Room.RoomName - @user.UserName</p>
-                                    
+                        @foreach (var reservation in ReservationListModel.ReservationList)
+                        {
+                            if (z >= ((int)reservation.ReservationStartDate.DayOfWeek) % 7 &&
+                            z <= ((int)reservation.ReservationEndDate.DayOfWeek) % 7 && j >= (int)reservation.ReservationStartDate.Hour &&
+                            j <= (int)reservation.ReservationEndDate.Hour)
+                            {
+                                temp = 1;
+                                @foreach (var user in ReservationListModel.UserList)
+                                {
+                                    if (user.Id == reservation.UserId)
+                                    {
+                                        temp = 1;
+                                        <p>@reservation.Room.RoomName - @user.UserName</p>
+
+                                    }
+
                                 }
-                                
+
                             }
-                            
-                        } 
-                        
-                    }
-                    @if(temp==0){
-                        <p>-</p>
-                    }
+
+                        }
+                        @if (temp == 0)
+                        {
+                            <p>-</p>
+                        }
                     </th>
-                    
-                    
-                    
-                    
+
+
+
+
                 }
             </tr>
         }
-   
+
+        
+
     </tbody>
 </table>
+    <form method="post" asp-page-handler="NextWeek" >
+            <button class="btn btn-primary w-100 ">Next Week</button>
+        </form>

@@ -15,7 +15,11 @@ public class ReservationListModel : PageModel
     private readonly ILogger<ReservationListModel> _logger;
     private readonly UserManager<IdentityUser> _userManager;
 
+
+    
     public static DateOnly startDate;
+
+    public int temp=0;
 
     public ReservationListModel(ILogger<ReservationListModel> logger, UserManager<IdentityUser> userManager)
     {
@@ -28,8 +32,19 @@ public class ReservationListModel : PageModel
         ReservationList = context.TblReservations.ToList<TblReservation>();
         RoomList=context.TblRooms.ToList<TblRoom>();
         UserList=_userManager.Users.ToList();
-        startDate=DateOnly.FromDateTime(DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek));
+        if(temp==0){
+            startDate=DateOnly.FromDateTime(DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek));
+        }
+        else{
+            startDate=DateOnly.FromDateTime(DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek)).AddDays(temp);
+        }
         
     }
+
+    public IActionResult OnPostNextWeek()
+        {
+            temp=7;
+            return RedirectToAction("Get");
+        }
 }
 
