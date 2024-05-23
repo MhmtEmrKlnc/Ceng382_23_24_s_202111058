@@ -13,6 +13,15 @@
     <br>
 }
 
+<form method="get" asp-page-handler="DateFilter">
+    <div class="input-group">
+        <input class="form-control" asp-for="DateFilter"
+            placeholder="Select the beginning of the week you want to see reservations" />
+        <div class="input-group-append">
+            <button type="submit" class="btn btn-success">Filter</button>
+        </div>
+    </div>
+</form>
 
 <table class="table-border table table-striped table-bordered mt-5">
     <thead>
@@ -80,6 +89,4 @@
 
     </tbody>
 </table>
-<form method="post" asp-page-handler="NextWeek">
-    <button class="btn btn-primary w-100 ">Next Week</button>
-</form>
+
