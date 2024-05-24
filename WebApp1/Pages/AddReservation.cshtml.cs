@@ -37,52 +37,62 @@ public class AddReservationModel : PageModel
             {
                 if (reservation.RoomId == NewReservation.RoomId)
                 {
-                    
+
                     if (!(NewReservation.ReservationStartDate.Hour >= reservation.ReservationEndDate.Hour || NewReservation.ReservationEndDate.Hour <= reservation.ReservationStartDate.Hour))
                     {
                         temp = 1;
                         break;
-                        
+
                     }
 
                 }
 
             }
-            
+
 
         }
         if (temp != 1)
         {
-            NewLog = new TblLog();
-            NewLog.RoomId = NewReservation.RoomId;
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (userId != null)
+            if (NewReservation.ReservationStartDate == NewReservation.ReservationEndDate)
             {
-                NewReservation.UserId = userId;
-                NewLog.UserId = userId;
+                NewLog = new TblLog();
+                NewLog.RoomId = NewReservation.RoomId;
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                if (userId != null)
+                {
+                    NewReservation.UserId = userId;
+                    NewLog.UserId = userId;
+                }
+
+                NewReservation.IsDeleted = false;
+
+                NewLog.Timestamp = DateTime.Now;
+                NewLog.IsDeleted = false;
+                NewLog.Action = "Reservation Added";
+
+
+                context.Add(NewLog);
+                context.Add(NewReservation);
+                TempData["AlertMessage"] = "Reservation Added Succesfully!";
+                context.SaveChanges();
+
+                return Redirect("/ReservationList");
+            }
+            else
+            {
+                TempData["AlertMessage"] = "Reservation start date and end date must be the same day";
+                return RedirectToAction("Get");
             }
 
-            NewReservation.IsDeleted = false;
-
-            NewLog.Timestamp = DateTime.Now;
-            NewLog.IsDeleted = false;
-            NewLog.Action = "Reservation Added";
-
-
-            context.Add(NewLog);
-            context.Add(NewReservation);
-            TempData["AlertMessage"]="Reservation Added Succesfully!";
-            context.SaveChanges();
-
-            return Redirect("/ReservationList"); 
         }
-        else{
+        else
+        {
             TempData["AlertMessage"] = "There is another reservation for this room covering this time! Please choose another room or time slot.";
             return RedirectToAction("Get");
         }
 
 
-        
+
     }
 
 }

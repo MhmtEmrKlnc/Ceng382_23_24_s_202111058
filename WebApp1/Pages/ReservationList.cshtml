@@ -6,12 +6,7 @@
 
 <h1 style="text-align: center">@ViewData["Title"]</h1>
 <hr>
-<p>@ReservationListModel.startDate</p>
-@foreach (var reservation in ReservationListModel.ReservationList)
-{
-    <p>@reservation.ReservationStartDate</p>
-    <br>
-}
+
 
 @if (TempData["AlertMessage"] != null)
 {
@@ -20,16 +15,19 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" style="float:right;"></button>
     </div>
 }
-
+<br>
 <form method="get" asp-page-handler="DateFilter">
     <div class="input-group">
         <input class="form-control" asp-for="DateFilter"
             placeholder="Select the beginning of the week you want to see reservations" />
+        <input class="form-control" asp-for="SearchTerm" placeholder="Search for Room Name" />
+        <input class="form-control" asp-for="CapacitySearch" placeholder="Search for Capacity" />
         <div class="input-group-append">
             <button type="submit" class="btn btn-success">Filter</button>
         </div>
     </div>
 </form>
+
 
 <table class="table-border table table-striped table-bordered mt-5">
     <thead>
@@ -107,7 +105,7 @@
                         }
                         @if (temp == 0)
                         {
-                            <p>-</p>
+                            <p style="text-align:center">-</p>
 
                         }
 

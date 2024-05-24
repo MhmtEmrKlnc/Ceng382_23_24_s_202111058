@@ -36,3 +36,8 @@
     display: grid;
     grid-template-columns: 1fr auto;
 }
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+}
