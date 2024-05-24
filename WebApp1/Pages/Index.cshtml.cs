@@ -15,7 +15,7 @@ public class IndexModel : PageModel
     public IActionResult OnGet()
     {
         if(User.Identity.IsAuthenticated){
-            return Page();
+            return RedirectToPage("/ReservationList");
         }
         else{
             return Redirect("~/Login");

@@ -17,6 +17,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\mehme\\Desktop\\Yeni klasör\\Ceng382_23_24_s_202111058\\WebApp1\\wwwroot\\images\\HotelLogo3.png",
+      "PackagePath": "staticwebassets\\images\\HotelLogo3.png"
+    },
+    {
+      "Id": "C:\\Users\\mehme\\Desktop\\Yeni klasör\\Ceng382_23_24_s_202111058\\WebApp1\\wwwroot\\images\\hotel.jpeg",
+      "PackagePath": "staticwebassets\\images\\hotel.jpeg"
+    },
+    {
       "Id": "C:\\Users\\mehme\\Desktop\\Yeni klasör\\Ceng382_23_24_s_202111058\\WebApp1\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

@@ -3,7 +3,7 @@
     justify-content: center;
     text-align: center;
     min-height: 100vh;
-    
+
 }
 
 .form-border {
@@ -15,24 +15,25 @@
     height: fit-content;
 
 }
-.form-input:hover{
-    background-color:#8ab3fa; 
-    transition: 0.5s;   
+
+.form-input:hover {
+    background-color: #8ab3fa;
+    transition: 0.5s;
 }
 
-.table-border{
+.table-border {
     border: 2px solid #8ab3fa;
 }
 
-.table-effect:hover{
-    background-color:#8ab3fa;  
-    transition: 0.5s; 
+.table-effect:hover {
+    background-color: #8ab3fa;
+    transition: 0.5s;
 }
 
 .boxDiv {
     border: 2px dashed green;
     border-radius: 10px;
-    padding:15px;
+    padding: 15px;
     display: grid;
     grid-template-columns: 1fr auto;
 }
@@ -41,3 +42,5 @@
     display: flex;
     justify-content: space-between;
 }
+
+
