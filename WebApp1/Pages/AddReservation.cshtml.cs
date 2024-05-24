@@ -71,11 +71,13 @@ public class AddReservationModel : PageModel
 
             context.Add(NewLog);
             context.Add(NewReservation);
+            TempData["AlertMessage"]="Reservation Added Succesfully!";
             context.SaveChanges();
 
             return Redirect("/ReservationList"); 
         }
         else{
+            TempData["AlertMessage"] = "There is another reservation for this room covering this time! Please choose another room or time slot.";
             return RedirectToAction("Get");
         }
 

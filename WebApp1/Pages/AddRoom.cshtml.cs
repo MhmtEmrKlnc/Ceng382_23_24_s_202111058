@@ -30,8 +30,9 @@ public class AddRoomModel : PageModel
             }
             NewRoom.IsDeleted = false;
             context.Add(NewRoom);
+            TempData["AlertMessage"]="Room Added Succesfully!";
             context.SaveChanges();
-            return RedirectToAction("Get");
+            return RedirectToPage("RoomList");
         }
 
 }

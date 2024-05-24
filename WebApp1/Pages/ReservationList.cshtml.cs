@@ -80,6 +80,7 @@ public class ReservationListModel : PageModel
                 NewLog.RoomId=reservation.RoomId;
                 NewLog.Timestamp=DateTime.Now;
                 NewLog.Action="Reservation Deleted";
+                context.Add(NewLog);
                 context.SaveChanges();
             }
         }

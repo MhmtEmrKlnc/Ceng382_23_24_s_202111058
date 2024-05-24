@@ -4,6 +4,15 @@
     ViewData["Title"] = "Rooms";
 }
 <h1 style="text-align: center">@ViewData["Title"]</h1>
+<hr>
+
+@if (TempData["AlertMessage"] != null)
+{
+    <div class="alert alert-success">
+        <strong> Success - </strong>@TempData["AlertMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" style="float:right;"></button>
+    </div>
+}
 
 <table class="table-border table table-striped table-bordered mt-5">
     <thead>
