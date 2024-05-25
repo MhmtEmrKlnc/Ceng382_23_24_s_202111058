@@ -53,7 +53,7 @@ public class AddReservationModel : PageModel
         }
         if (temp != 1)
         {
-            if (NewReservation.ReservationStartDate == NewReservation.ReservationEndDate)
+            if (NewReservation.ReservationStartDate.Date == NewReservation.ReservationEndDate.Date)
             {
                 NewLog = new TblLog();
                 NewLog.RoomId = NewReservation.RoomId;
